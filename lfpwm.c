@@ -69,7 +69,7 @@ lfpwm_pwmTimerFunc(void) {
     }
   }
   uint32_t now = lfpwm_micros;
-  if (now>lastTime) {
+  if (now<lastTime) {
     lastTime += 0x7FFFFFFF;
     nextTime -= 0x7FFFFFFF;
   }
